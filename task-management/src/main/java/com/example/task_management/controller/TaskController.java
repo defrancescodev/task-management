@@ -13,15 +13,14 @@ public class TaskController {
     private TaskService taskService;
 
     @GetMapping("/{id}")
-    public String getTaskById(@PathVariable String id) {
-        return "Task com o id: " + id;
+    public Task getTaskById(@PathVariable String id) {
+        return taskService.getTaskById(id);
     }
 
 
     @PostMapping
-    public String postTask(@RequestBody Task body) {
-        return body.getTitle();
-
+    public Task postTask(@RequestBody Task body) {
+        return taskService.createTask(body);
     }
 
     @DeleteMapping("/{id}")

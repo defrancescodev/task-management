@@ -14,18 +14,14 @@ public class UserController {
 
 
     @GetMapping("/{id}")
-    public String getTaskById(@PathVariable String id) {
-        return "Tarefa com ID: " + id;
+    public User getTaskById(@PathVariable String id) {
+        return this.userService.getUserById(id);
     }
 
-    @GetMapping()
-    public String helloUser() {
-        return this.userService.helloUser("Samuel");
-    }
 
     @PostMapping()
-    public String postUser(@RequestBody User body) {
-        return body.getEmail();
+    public User postUser(@RequestBody User body) {
+        return this.userService.createUser(body);
 
     }
 
