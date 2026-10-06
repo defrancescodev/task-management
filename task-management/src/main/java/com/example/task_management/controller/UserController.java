@@ -14,7 +14,7 @@ public class UserController {
 
 
     @GetMapping("/{id}")
-    public User getTaskById(@PathVariable String id) {
+    public User getUserById(@PathVariable String id) {
         return this.userService.getUserById(id);
     }
 
@@ -26,13 +26,13 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable String id) {
-        return "Usuário com id " + id + " deletado com sucesso";
+    public void deleteUserById(@PathVariable String id) {
+        this.userService.deleteUserById(id);
     }
 
     @PutMapping("/{id}")
-    public String updateUser(@PathVariable String id,@RequestBody User body) {
-        return "Usuário com id " + id + " atualizado" + body.getEmail();
+    public User updateUser(@PathVariable String id,@RequestBody User body) {
+        return this.userService.updateUserById(id, body);
     }
 
 }

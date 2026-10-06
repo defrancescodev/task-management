@@ -24,8 +24,8 @@ public class TaskController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteTask(@PathVariable String id) {
-        return "Task com id " + id + " deletada com sucesso";
+    public void deleteTask(@PathVariable String id) {
+        taskService.deleteTaskByd(id);
     }
 
     @PutMapping("/{id}")
