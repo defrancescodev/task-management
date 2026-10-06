@@ -38,11 +38,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Segurança -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
 
 		<!-- Tempo Real / WebSockets -->
 		<dependency>

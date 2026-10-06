@@ -1,4 +1,4 @@
-package domain.task;
+package com.example.task_management.domain.task;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
